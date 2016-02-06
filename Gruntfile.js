@@ -7,37 +7,34 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: [
-          'js/plugins/jquery.min.js',
-          'js/plugins/owl.carousel.min.js',
-          'js/bootstrap/collapse.js',
-          'js/bootstrap/dropdown.js',
-          'js/bootstrap/transition.js',
-          'js/themefunctions.js'
+          'assets/bower_components/jquery/dist/jquery.min.js',
+          'assets/bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js',
+          'assets/js/themefunctions.js'
         ],
-        dest: 'js/theme.js'
+        dest: 'assets/js/theme.js'
       }
     },
 
     uglify: {
       build: {
-        src: 'js/theme.js',
-        dest: 'js/theme.min.js'
+        src: 'assets/js/theme.js',
+        dest: 'assets/js/theme.min.js'
       }
     },
 
     watch: {
       options: {
-        livereload: true
+        livereload: true,
       },
       scripts: {
-        files: ['js/*.js'],
+        files: ['assets/js/**/*.js'],
         tasks: ['concat', 'uglify'],
         options: {
           spawn: false
         }
       },
       css: {
-        files: ['sass/*.sass'],
+        files: ['assets/sass/**/*.sass'],
         tasks: ['sass'],
         options: {
           spawn: false
@@ -51,7 +48,7 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-          'css/default.css': 'sass/default.sass'
+          'assets/css/default.css': 'assets/sass/default.sass'
         }
       }
     }

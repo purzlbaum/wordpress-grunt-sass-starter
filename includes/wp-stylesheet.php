@@ -11,12 +11,11 @@
  */
 
 /**
- * Register stylesheets
+ * Register the stylesheet
  * @since  wordpress-grunt-sass-starter 0.3.0
  *
  * @return void
  */
-
 function wp_load_stylesheet() {
 
     /*
@@ -35,5 +34,4 @@ function wp_load_stylesheet() {
     wp_enqueue_style( 'wp-minified-css' );
 
 }
-
 add_action( 'wp_enqueue_scripts', 'wp_load_stylesheet' );
